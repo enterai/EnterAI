@@ -1,0 +1,23 @@
+.loginPage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loginHeader div {
+  color: #828282;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  min-width: 280px;
+  width: 50vw;
+  max-width: 450px;
+}
+
+.submitBtn {
+  display: flex;
+  justify-content: center;
+}

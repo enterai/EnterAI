@@ -1,0 +1,44 @@
+.textFieldContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f2f6fb;
+  border-radius: 20px;
+  height: 50px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.inputLabel {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #525552;
+}
+
+.inputLabelError {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #f44336;
+}
+
+input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  line-height: 40px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.helperText {
+  margin-top: 5px;
+  margin-left: 20px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #f44336;
+}

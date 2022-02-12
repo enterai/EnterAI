@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import * as Yup from "yup";
 import { Formik } from "formik";
-import { NavLink } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Link, NavLink } from "react-router-dom";
+import { Button, Tooltip } from "@mui/material";
 import TextField from "../components/TextField";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
+import LoginRegisterSvg from "../assets/online_learning.svg";
 import "./Login.css";
 
 const Login = () => {
@@ -16,107 +17,144 @@ const Login = () => {
   };
 
   return (
-    <div className="loginPage">
-      <div className="loginHeader">
-        <h1>Login to your account</h1>
+    <div className="main">
+      <div className="loginPage">
+        <div className="loginHeader">
+          <h1>Login to your account</h1>
+          <div>
+            Not a member?{" "}
+            <NavLink
+              to="/register"
+              style={{ textDecoration: "none", color: "#0057ff" }}
+            >
+              <b>Register</b>
+            </NavLink>
+          </div>
+        </div>
         <div>
-          Not a member?{" "}
-          <NavLink
-            to="/register"
-            style={{ textDecoration: "none", color: "#0057ff" }}
+          <Formik
+            initialValues={{ email: "", password: "" }}
+            validationSchema={Yup.object().shape({
+              email: Yup.string()
+                .email("Must be a valid email")
+                .max(255)
+                .required("Email is required"),
+              password: Yup.string()
+                .min(6, "Password must be at least 6 characters")
+                .max(255)
+                .required("Password is required"),
+            })}
+            onSubmit={(values, { setSubmitting }) => {
+              setTimeout(() => {
+                alert(JSON.stringify(values, null, 2));
+                setSubmitting(false);
+              }, 400);
+            }}
           >
-            <b>Register</b>
-          </NavLink>
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+            }) => {
+              const submitBtnDisabled = Object.keys(errors).length > 0;
+              return (
+                <form onSubmit={handleSubmit}>
+                  <div className="loginForm">
+                    <TextField
+                      label="Email"
+                      type="email"
+                      name="email"
+                      placeholder="Enter your email"
+                      required
+                      icon={<MailOutlineIcon />}
+                      helperText={touched.email && errors.email}
+                      error={Boolean(touched.email && errors.email)}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.email}
+                      style={{ marginBottom: "20px" }}
+                    />
+                    <TextField
+                      label="Password"
+                      type={showPassword ? "text" : "password"}
+                      name="password"
+                      placeholder="Enter your password"
+                      required
+                      icon={
+                        showPassword ? (
+                          <VisibilityOffOutlinedIcon />
+                        ) : (
+                          <VisibilityOutlinedIcon />
+                        )
+                      }
+                      onIconClick={showPasswordHandler}
+                      helperText={touched.password && errors.password}
+                      error={Boolean(touched.password && errors.password)}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.password}
+                      style={{ marginBottom: "20px" }}
+                    />
+                    <div className="submitBtns">
+                      <Link to="/" className="homeBtn">
+                        <Button
+                          variant="outlined"
+                          size="medium"
+                          style={{
+                            borderRadius: "20px",
+                            width: "150px",
+                            height: "40px",
+                            textTransform: "none",
+                            color: "black",
+                            borderColor: "#9d9d9d",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          Go to Home
+                        </Button>
+                      </Link>
+                      <Tooltip
+                        title={
+                          submitBtnDisabled ? "Please fill all the fields" : ""
+                        }
+                      >
+                        <Button
+                          type="submit"
+                          variant="contained"
+                          size="medium"
+                          style={{
+                            borderRadius: "20px",
+                            width: "150px",
+                            height: "40px",
+                            textTransform: "none",
+                            fontWeight: "bold",
+                            backgroundColor:
+                              submitBtnDisabled || isSubmitting
+                                ? "#9d9d9d"
+                                : "#0057ff",
+                            color: "white",
+                            cursor:
+                              submitBtnDisabled || isSubmitting
+                                ? "not-allowed"
+                                : "pointer",
+                          }}
+                        >
+                          Login
+                        </Button>
+                      </Tooltip>
+                    </div>
+                  </div>
+                </form>
+              );
+            }}
+          </Formik>
         </div>
       </div>
-      <div>
-        <Formik
-          initialValues={{ email: "", password: "" }}
-          validationSchema={Yup.object().shape({
-            email: Yup.string()
-              .email("Must be a valid email")
-              .max(255)
-              .required("Email is required"),
-            password: Yup.string()
-              .min(6, "Password must be at least 6 characters")
-              .max(255)
-              .required("Password is required"),
-          })}
-          onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 400);
-          }}
-        >
-          {({
-            values,
-            errors,
-            touched,
-            handleChange,
-            handleBlur,
-            handleSubmit,
-            isSubmitting,
-          }) => (
-            <form onSubmit={handleSubmit}>
-              <div className="loginForm">
-                <TextField
-                  label="Email"
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  icon={<MailOutlineIcon />}
-                  helperText={touched.email && errors.email}
-                  error={Boolean(touched.email && errors.email)}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.email}
-                  style={{ marginBottom: "20px" }}
-                />
-                <TextField
-                  label="Password"
-                  type={showPassword ? "text" : "password"}
-                  name="password"
-                  placeholder="Enter your password"
-                  icon={
-                    showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />
-                  }
-                  onIconClick={showPasswordHandler}
-                  helperText={touched.password && errors.password}
-                  error={Boolean(touched.password && errors.password)}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.password}
-                  style={{ marginBottom: "20px" }}
-                />
-                <div className="submitBtn">
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    size="medium"
-                    style={{
-                      borderRadius: "20px",
-                      width: "150px",
-                      height: "40px",
-                      textTransform: "none",
-                      fontWeight: "bold",
-                      backgroundColor: "#0057ff",
-                      color: "white",
-                    }}
-                    disabled={
-                      isSubmitting ||
-                      Boolean(errors.email) ||
-                      Boolean(errors.password)
-                    }
-                  >
-                    Login
-                  </Button>
-                </div>
-              </div>
-            </form>
-          )}
-        </Formik>
-      </div>
+      <img className="loginImg" src={LoginRegisterSvg} alt="Login" />
     </div>
   );
 };

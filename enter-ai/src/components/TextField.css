@@ -31,8 +31,13 @@ input {
   background-color: transparent;
   outline: none;
   line-height: 40px;
-  width: 100%;
+  width: 95%;
   font-size: 0.9rem;
+}
+
+input:-webkit-autofill {
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .helperText {

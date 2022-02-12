@@ -26,6 +26,7 @@ const TextField = (props) => {
         <div className="inputContainer">
           <div className={error ? "inputLabelError" : "inputLabel"}>
             {label}
+            {required && "*"}
           </div>
           <input
             className="textInput"

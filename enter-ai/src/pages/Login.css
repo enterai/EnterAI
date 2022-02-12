@@ -1,3 +1,50 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loginImg {
+  width: 40vw;
+}
+
+.nameContainer {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 1100px) {
+  .nameContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .firstNameContainer {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .loginImg {
+    margin-top: 30px;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .loginImg {
+    display: none;
+  }
+}
+
 .loginPage {
   display: flex;
   justify-content: center;
@@ -8,16 +55,25 @@
   color: #828282;
 }
 
+.loginHeader h1 {
+  font-size: 5vmin;
+}
+
 .loginForm {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
   min-width: 280px;
-  width: 50vw;
+  width: 40vw;
   max-width: 450px;
 }
 
-.submitBtn {
+.submitBtns {
   display: flex;
   justify-content: center;
+}
+
+.homeBtn {
+  text-decoration: none;
+  margin-right: 20px;
 }

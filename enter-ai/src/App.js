@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <div style={{ margin: "40px 60px" }}>
+        <div style={{ margin: "40px 4%" }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<Courses />} />

@@ -1,0 +1,90 @@
+.courseCard {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 0px 10px 20px 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@media screen and (max-width: 400px) {
+  .courseCard {
+    width: 250px;
+  }
+}
+
+.courseCard img {
+  object-fit: cover;
+  width: 100%;
+  height: 150px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.courseDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  height: 90px;
+  border-bottom: 1px solid #d9dad9;
+}
+
+.courseTitle {
+  margin: 0px 15px;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  font-weight: 600;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.courseAuthor {
+  margin: 0px 15px;
+  font-size: 0.7rem;
+  margin-top: 5px;
+}
+
+.moreDetails {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.7rem;
+  margin-top: 5px;
+}
+
+.moreDetails div {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 5px;
+  border: 1px solid #eaebea;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.priceSection {
+  padding: 2px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 400px) {
+  .courseDetails {
+    height: 150px;
+  }
+
+  .moreDetails {
+    flex-direction: column;
+    margin: 0px 10px;
+  }
+}

@@ -165,7 +165,7 @@ const Register = () => {
                           variant="outlined"
                           size="medium"
                           style={{
-                            borderRadius: "20px",
+                            borderRadius: "5px",
                             width: "150px",
                             height: "40px",
                             textTransform: "none",
@@ -187,7 +187,7 @@ const Register = () => {
                           variant="contained"
                           size="medium"
                           style={{
-                            borderRadius: "20px",
+                            borderRadius: "5px",
                             width: "150px",
                             height: "40px",
                             textTransform: "none",

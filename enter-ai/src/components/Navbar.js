@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import Logo from "../assets/cover.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -39,7 +40,7 @@ const Navbar = () => {
       to: "placements",
     },
     {
-      name: "About enterAI",
+      name: "About",
       to: "about",
     },
   ];
@@ -47,9 +48,17 @@ const Navbar = () => {
   return (
     <div className={isNavExpanded ? "navContainerExpanded" : "navContainer"}>
       <div className={isNavExpanded ? "navContentExpanded" : "navContent"}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           <Link to="/" className="navLogo">
-            <div style={{ display: "flex", alignItems: "center" }}>enterAI</div>
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <img src={Logo} alt="Logo" height="60px" />
+            </div>
           </Link>
           {isNavExpanded && (
             <span
@@ -102,7 +111,7 @@ const Navbar = () => {
                 variant="outlined"
                 size="medium"
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "5px",
                   textTransform: "none",
                   color: "black",
                   borderColor: "#9d9d9d",
@@ -126,7 +135,7 @@ const Navbar = () => {
                 variant="outlined"
                 size="medium"
                 style={{
-                  borderRadius: "20px",
+                  borderRadius: "5px",
                   textTransform: "none",
                   color: "white",
                   backgroundColor: "#0057ff",

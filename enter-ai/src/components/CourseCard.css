@@ -1,9 +1,9 @@
 .courseCard {
-  width: 350px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  margin: 0px 10px 20px 10px;
+  margin: 0px 20px 0px 20px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -26,7 +26,7 @@
   flex-direction: column;
   justify-content: space-around;
   padding: 10px;
-  height: 90px;
+  height: 100px;
   border-bottom: 1px solid #d9dad9;
 }
 

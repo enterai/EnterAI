@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import Placements from "./pages/Placements";
@@ -22,6 +23,7 @@ function App() {
             <Route path="/register" element={<Register />} />
           </Routes>
         </div>
+        <Footer />
       </Router>
     </div>
   );

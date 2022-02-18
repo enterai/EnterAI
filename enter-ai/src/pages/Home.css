@@ -1,0 +1,42 @@
+.homePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 100px);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.homeHeader {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 10% 0px 10%;
+}
+
+.leftHeader {
+  font-size: 7vmin;
+  font-weight: 600;
+  width: 30vw;
+}
+
+.rightHeader {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+}
+
+.rightHeader .title {
+  font-size: 3vmin;
+  font-weight: 700;
+}
+
+.rightHeader .content {
+  margin-top: 10px;
+  font-size: 1.8vmin;
+  color: #525552;
+}
+
+.introVideo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}

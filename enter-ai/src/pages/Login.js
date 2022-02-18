@@ -7,7 +7,7 @@ import TextField from "../components/TextField";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
-import LoginRegisterSvg from "../assets/online_learning.svg";
+import LoginRegisterSvg from "../assets/ELearning.gif";
 import "./Login.css";
 
 const Login = () => {
@@ -105,7 +105,7 @@ const Login = () => {
                           variant="outlined"
                           size="medium"
                           style={{
-                            borderRadius: "20px",
+                            borderRadius: "5px",
                             width: "150px",
                             height: "40px",
                             textTransform: "none",
@@ -127,7 +127,7 @@ const Login = () => {
                           variant="contained"
                           size="medium"
                           style={{
-                            borderRadius: "20px",
+                            borderRadius: "5px",
                             width: "150px",
                             height: "40px",
                             textTransform: "none",

@@ -33,7 +33,6 @@ const TextField = (props) => {
             type={type}
             name={name}
             value={value}
-            required={required}
             placeholder={placeholder}
             onChange={onChange}
             onBlur={onBlur}
